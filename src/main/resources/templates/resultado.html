@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>MotOwner - Resultado de Simulación</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background-color: #f4f7f6; }
+        .container { max-width: 800px; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin-bottom: 20px; }
+        h2, h3 { color: #333; }
+        .resultado-box { background-color: #d4edda; color: #155724; padding: 15px; border-radius: 4px; margin-bottom: 20px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background-color: #2c3e50; color: white; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        .btn-volver { display: inline-block; background-color: #34495e; color: white; padding: 10px 15px; text-decoration: none; border-radius: 4px; margin-top: 15px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Resultado del Análisis de Financiación</h2>
+    <div class="resultado-box">
+        <p>¡Hola <strong><span th:text="${cliente}"></span></strong>! Tu simulación se ha procesado con éxito.</p>
+        <p>Para una motocicleta con valor de: <strong>$<span th:text="${precio}"></span></strong></p>
+        <p>Tu cuota estimada es de: <strong>$<span th:text="${#numbers.formatDecimal(resultadoCuota, 1, 2)}"></span> semanales</strong> (Financiado a <span th:text="${semanas}"></span> cuotas fijas).</p>
+    </div>
+    <p><em>*Nota: Este registro ha sido almacenado de forma permanente en la base de datos MySQL corporativa.</em></p>
+</div>
+
+<div class="container">
+    <h3>Historial Global de Simulaciones Guardadas (Módulo Auditoría)</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>ID Registro</th>
+                <th>Nombre del Cliente</th>
+                <th>Valor del Vehículo</th>
+                <th>Cuotas del Plan</th>
+                <th>Pago Semanal</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="sim : ${historialSimulaciones}">
+                <td th:text="${sim.id}"></td>
+                <td th:text="${sim.nombreCliente}"></td>
+                <td>$<span th:text="${sim.valorMoto}"></span></td>
+                <td th:text="${sim.cuotasSemanales}"></td>
+                <td>$<span th:text="${#numbers.formatDecimal(sim.calcularCuotaSemanal(), 1, 2)}"></span></td>
+            </tr>
+        </tbody>
+    </table>
+    <a th:href="@{/}" class="btn-volver">Realizar otra simulación</a>
+</div>
+
+</body>
+</html>
