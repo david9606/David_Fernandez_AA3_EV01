@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * Clase principal de arranque para el ecosistema MotOwner.
  * Cumple con los estándares de codificación Java y la arquitectura de Spring Boot.
- * * @author David (Tu Apellido)
+ * * @author David Fernandez
  * @version 1.0
  */
 @SpringBootApplication
