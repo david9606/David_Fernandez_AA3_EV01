@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7fe;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.navbar {
+    background-color: #0052cc;
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+}
+
+.nav-links { display: flex; list-style: none; gap: 20px; }
+.nav-links a { color: white; text-decoration: none; font-weight: 600; }
+
+
+.contenedor-grid {
+    display: flex !important;
+    flex-direction: row !important; 
+    flex-wrap: nowrap !important;  
+    justify-content: center !important;
+    gap: 20px !important;
+    width: 95% !important;
+    max-width: 1200px !important;
+    margin: 40px auto !important;
+}
+
+.card {
+    background: white;
+    flex: 1 !important; 
+    max-width: 320px !important;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 400px;
+}
+
+.moto-img {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+    background: #f8fafc;
+    border-radius: 12px;
+}
+
+.cuota-box {
+    background: #f0f7ff;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.btn-accion {
+    background: #0052cc;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+
+.card-salud-pro {
+    background: linear-gradient(135deg, #0052cc 0%, #002d72 100%);
+    color: white;
+    padding: 40px;
+    border-radius: 24px;
+    text-align: center;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(0, 82, 204, 0.2);
+}
+
+.porcentaje-grande {
+    font-size: 4rem;
+    font-weight: 800;
+    margin: 10px 0;
+}
+
+
+.bar-container {
+    background-color: #e2e8f0;
+    height: 10px;
+    border-radius: 10px;
+    margin: 10px 0;
+    overflow: hidden; 
+}
+
+
+.bar {
+    height: 100%;
+    background-color: #00c853; 
+    border-radius: 10px;
+    transition: width 0.5s ease-in-out;
+}
+
+
+.bar.orange {
+    background-color: #f59e0b;
+}
+
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+
+.action-area {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.action-area .btn-accion {
+    max-width: 400px;
+    background-color: #1a202c; 
+}
+
+
+h1 {
+    font-size: 2.2rem !important;
+    font-weight: 800;
+    margin-bottom: 10px;
+    color: #1a202c;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.2rem !important;
+    font-weight: 700;
+    color: #1a202c;
+}
+
+p {
+    font-size: 1rem !important;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+
+.main-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .nav-links {
+        padding: 0;
+        gap: 10px;
+    }
+
+    .contenedor-grid {
+        flex-direction: column !important; 
+        flex-wrap: wrap !important;
+        align-items: center !important;
+    }
+
+    .card {
+        width: 100% !important;
+        max-width: 90% !important;
+        min-height: auto;
+    }
+
+    .porcentaje-grande {
+        font-size: 2.5rem !important;
+    }
+}
